@@ -488,7 +488,7 @@ img {
 .summary {
   margin-bottom: 120px;
   padding: 60px 0;
-  background-image: url(../images/bg.gif);
+  background-image: url(bg.gif);
   background-repeat: repeat;
   animation: fall 10s infinite linear;
 }
