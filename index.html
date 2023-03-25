@@ -4,49 +4,73 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="favicon.ico">
+  <link rel="icon" type="image/png" href="images/favicon.ico">
   <title>BBB英会話スクール</title>
   <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
+
 <body>
 
-<header class="header">
-  <h1 class="site-title"><a href="#"><img src="english01.svg"></a></h1>
-  <div class="hamburger-menu">
+<!-- header -->
+<header id="header">
+
+  <!-- タイトルロゴ -->
+  <h1 class="header-img">
+    <a href="/"><img src="images/english01.svg" alt="BBB英会話スクール"></a>
+  </h1>
+
+  <!-- ハンバーガー中身 -->
+  <nav id="navi">
+    <img class="logo" src="images/english02.svg" alt="BBB英会話スクール">
+    <ul class="menu">
+      <li class="menu-sec"><a href="#reason">BBBが選ばれる理由</a></li>
+      <li class="menu-sec"><a href="#voice">受講生の声</a></li>
+      <li class="menu-sec"><a href="#summary">スクールの概要</a></li>
+    </ul>
+    <a class="btn" href="#">無料体験に申し込む</a>
+  </nav>
+
+  <!-- ハンバーガー -->
+  <div class="hamburger">
     <span></span>
     <span></span>
     <span></span>
   </div>
+
 </header>
+<!-- / header -->
+
+
 
 <!-- main -->
 <main>
   <div class="main-visual">
       <div class="text">
-        <h2 class="main-title">話して学ぼう！<br>BBB英会話スクール</h2>
-        <button class="btn"><a href="#">無料体験はこちら</a></button>
+        <p class="main-title">話して学ぼう！<br>BBB英会話スクール</p>
+        <a href="#">無料体験はこちら</a>
       </div>
       <ul class="fade">
-        <li><img src="english03.jpg"></li>
-        <li><img src="english04.jpg"></li>
-        <li><img src="english05.jpg"></li>
+        <li><img src="images/english03.jpg"></li>
+        <li><img src="images/english04.jpg"></li>
+        <li><img src="images/english05.jpg"></li>
       </ul>
   </div><!-- / main-visual -->
 
   <section class="reason">
     <h2 class="section-title">BBBが選ばれる理由</h2>
     <div class="reason-bg">
-      <div class="online">
-        <img class="online-img" src="icon.png">
+
+      <div class="online fade-in fade-in-left">
+        <img class="online-img" src="images/icon.png">
         <div class="text">
           <p class="color-text">オンライン対応</p>
           <p class="sub-text">24時間いつでも受講できる！</p>
         </div>
       </div>
 
-      <div class="native">
-        <img class="native-img" src="icon02.png">
+      <div class="native fade-in fade-in-right">
+        <img class="native-img" src="images/icon02.png">
         <div class="text">
           <p class="color-text">講師はネイティブ</p>
           <p class="sub-text">お気に入りの講師が自由に選べる！</p>
@@ -60,7 +84,7 @@
 
     <div class="item-left inview-balloon">
       <div class="student">
-        <img src="icon03.png">
+        <img src="images/icon03.png">
         <p class="name">●●●さん<br>大学生</p>
       </div>
       <div class="balloon-text">
@@ -77,14 +101,14 @@
         </p>
       </div>
         <div class="student">
-          <img src="icon04.png">
+          <img src="images/icon04.png">
           <p class="name">●●●さん<br>会社員</p>
         </div>
     </div>
 
     <div class="item-left inview-balloon">
       <div class="student">
-        <img src="icon05.png">
+        <img src="images/icon05.png">
         <p class="name">●●●さん<br>大学生</p>
       </div>
       <div class="balloon-text">
@@ -183,4 +207,5 @@
 <script src="js/main.js"></script>
 </body>
 </html>
+
 
