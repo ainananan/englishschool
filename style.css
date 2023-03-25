@@ -22,9 +22,9 @@ img {
 }
 
 .wrapper {
-  width: 100%;
   max-width: 860px;
   margin: 0 auto;
+  padding: 0 16px;
 }
 
 .section-title {
@@ -47,65 +47,153 @@ img {
   margin: 0 auto;
 }
 
-.header {
+#header {
   display: flex;
   justify-content: space-between;
+  height: 100px;
+  /* 1本目の線の位置を設定 */
+  /* 2本目の線の位置を設定 */
+  /* 3本目の線の位置を設定 */
+  /* 2本目と3本目は重ねて45度回転 */
 }
-.header img {
+#header .header-img {
   width: 100px;
-  margin-top: 50px;
-  margin-left: 40px;
+  margin: 50px 0 0 40px;
 }
-
-.hamburger-menu {
-  display: block;
+#header .hamburger {
   width: 100px;
   height: 100px;
   background-color: #FF2A2A;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 100;
   position: fixed;
   top: 0;
   right: 0;
-  z-index: 30;
-  cursor: pointer;
-  padding-top: 36px;
-  transition: 0.6s;
 }
-.hamburger-menu:hover {
+@media screen and (max-width: 900px) {
+  #header .hamburger {
+    width: 75px;
+    height: 75px;
+  }
+}
+#header .hamburger:hover {
   opacity: 0.7;
 }
-.hamburger-menu span {
+#header .hamburger span {
+  display: block;
   width: 50px;
   height: 2px;
-  background: #fff;
+  background-color: #fff;
   position: absolute;
-  left: 24.5px;
+  left: 25px;
+  transition: 0.3s ease-in-out;
 }
-.hamburger-menu span:nth-child(1) {
+@media screen and (max-width: 900px) {
+  #header .hamburger span {
+    width: 35px;
+    left: 20px;
+  }
+}
+#header .hamburger span:nth-child(1) {
   top: 36px;
 }
-.hamburger-menu span:nth-child(2) {
+@media screen and (max-width: 900px) {
+  #header .hamburger span:nth-child(1) {
+    top: 26px;
+  }
+}
+#header .hamburger span:nth-child(2) {
   top: 50px;
 }
-.hamburger-menu span:nth-child(3) {
+@media screen and (max-width: 900px) {
+  #header .hamburger span:nth-child(2) {
+    top: 37px;
+  }
+}
+#header .hamburger span:nth-child(3) {
   top: 64px;
 }
 @media screen and (max-width: 900px) {
-  .hamburger-menu {
-    width: 75PX;
-    height: 75PX;
-  }
-  .hamburger-menu span:nth-child(1) {
-    top: 26px;
-  }
-  .hamburger-menu span:nth-child(2) {
-    top: 37px;
-  }
-  .hamburger-menu span:nth-child(3) {
+  #header .hamburger span:nth-child(3) {
     top: 48px;
   }
-  .hamburger-menu span {
-    left: 14.5px;
+}
+#header .hamburger.active span:nth-child(1) {
+  top: 47px;
+  left: 25px;
+  background: #fff;
+  transform: rotate(-45deg);
+}
+#header .hamburger.active span:nth-child(2),
+#header .hamburger.active span:nth-child(3) {
+  top: 47px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+#header #navi {
+  width: 100%;
+  height: 100vh;
+  background-color: #ff2a2a;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  visibility: hidden;
+}
+#header #navi.active {
+  opacity: 1;
+  visibility: visible;
+}
+#header #navi .logo {
+  width: 100px;
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+#header #navi .menu {
+  margin: 80px 0 40px 0;
+}
+@media screen and (max-width: 900px) {
+  #header #navi .menu {
+    margin: 130px 0px 40px 0px;
   }
+}
+#header #navi .menu li {
+  margin-bottom: 20px;
+}
+#header #navi .menu a {
+  color: #fff;
+  font-weight: bold;
+}
+#header #navi .btn {
+  width: 250px;
+  border: solid 1px #fff;
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  padding: 15px 0;
+  margin: 0 auto;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+#header #navi .btn::after {
+  content: "　";
+  width: 250px;
+  border-right: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+  padding: 15px 0;
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+}
+#header #navi .btn:hover {
+  background-color: #fff;
+  color: #ff2a2a;
 }
 
 .main-visual {
@@ -116,6 +204,7 @@ img {
 @media screen and (max-width: 900px) {
   .main-visual {
     margin-bottom: 0;
+    height: 600px;
   }
 }
 
@@ -124,6 +213,12 @@ img {
   top: 280px;
   left: 135px;
   z-index: 20;
+}
+@media screen and (max-width: 900px) {
+  .main-visual .text {
+    top: 300px;
+    left: 25px;
+  }
 }
 .main-visual .main-title {
   font-size: 46px;
@@ -259,6 +354,21 @@ img {
     width: 90%;
   }
 }
+.reason .fade-in {
+  opacity: 0;
+  transition-duration: 500ms;
+  transition-property: opacity, transform;
+}
+.reason .fade-in-left {
+  transform: translate(-50px, 0);
+}
+.reason .fade-in-right {
+  transform: translate(50px, 0);
+}
+.reason .scroll-in {
+  opacity: 1;
+  transform: translate(0, 0);
+}
 .reason .native {
   width: 50%;
   height: 200px;
@@ -378,7 +488,7 @@ img {
 .summary {
   margin-bottom: 120px;
   padding: 60px 0;
-  background-image: url(bg.gif);
+  background-image: url(../images/bg.gif);
   background-repeat: repeat;
   animation: fall 10s infinite linear;
 }
@@ -387,6 +497,11 @@ img {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+@media screen and (max-width: 900px) {
+  .summary .menu {
+    flex-direction: column;
+  }
+}
 .summary .menu li {
   width: 48%;
   padding: 60px;
@@ -394,27 +509,33 @@ img {
   margin-bottom: 32px;
   border-radius: 20px;
 }
-.summary .menu li:nth-child(n+3) {
-  margin-bottom: 0;
+@media screen and (max-width: 900px) {
+  .summary .menu li {
+    width: 100%;
+  }
 }
-.summary .menu-title {
+
+.menu-title {
   font-weight: bold;
   line-height: 1;
   text-align: center;
 }
-.summary .menu-title .ja {
+
+.ja {
   display: block;
   font-size: 28px;
   margin-bottom: 15px;
   letter-spacing: 2.8px;
 }
-.summary .menu-title .en {
+
+.en {
   display: block;
   font-size: 18px;
   margin-bottom: 30px;
   letter-spacing: 1.8px;
 }
-.summary .menu-title p {
+
+p {
   letter-spacing: 1.6px;
 }
 
@@ -473,13 +594,32 @@ img {
 .footer a:hover {
   opacity: 0.7;
 }
+@media screen and (max-width: 900px) {
+  .footer a {
+    font-size: 0.75rem;
+  }
+}
 .footer .inner {
   display: flex;
   justify-content: space-between;
   margin-bottom: 60px;
 }
+@media screen and (max-width: 900px) {
+  .footer .inner {
+    flex-wrap: wrap;
+  }
+}
 .footer .inner > li {
   width: 25%;
+}
+@media screen and (max-width: 900px) {
+  .footer .inner > li {
+    width: 50%;
+  }
+}
+.footer .inner > li:nth-child(1),
+.footer .inner > li:nth-child(2) {
+  margin-bottom: 30px;
 }
 .footer-menu li {
   margin-bottom: 3px;
